@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic html 2</title>
+    <style>
+      table,
+      td,
+      tr,
+      th {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>save</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>jan</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>feb</td>
+          <td>200</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td>total</td>
+          <td>300</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <!-- homework table  -->
+    <table>
+      <tr>
+        <th rowspan="3">day</th>
+        <th colspan="3">seminar</th>
+      </tr>
+      <tr>
+        <th colspan="2">schedule</th>
+        <th rowspan="2">topic</th>
+      </tr>
+
+      <tr>
+        <th>begin</th>
+        <th>end</th>
+      </tr>
+
+      <tr>
+        <td rowspan="2">Monday</td>
+        <td rowspan="2">8:00 a.m.</td>
+        <td rowspan="2">5:00 p.m.</td>
+        <td>Introduction to XML</td>
+      </tr>
+
+      <tr>
+        <td>Validity: DTD and Relax NG</td>
+      </tr>
+
+      <tr>
+        <td rowspan="3">Tuesday</td>
+        <td>8:00 a.m.</td>
+        <td>11:00 a.m.</td>
+        <td>XPath</td>
+      </tr>
+
+      <tr>
+        <td>11:00 a.m.</td>
+        <td>2:00 p.m.</td>
+        <td rowspan="2">XSL Transformatics</td>
+      </tr>
+
+      <tr>
+        <td>2:00 p.m.</td>
+        <td>5:00 p.m.</td>
+      </tr>
+
+      <tr>
+        <td>Wednesday</td>
+        <td>8:00 a.m.</td>
+        <td>12:00 p.m.</td>
+        <td>XSL Formatting Objects</td>
+      </tr>
+    </table>
+    <br />
+    <br />
+
+    <!-- creating form  -->
+
+    <h1>Welcome to webpage !!</h1>
+
+    <!-- using table  -->
+    <table>
+      <tr>
+        <td>
+          <label for="username">Username:</label>
+        </td>
+        <td>
+          <input type="text" name="" id="" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="password">Password:</label>
+        </td>
+        <td>
+          <input type="text" name="" id="" />
+        </td>
+      </tr>
+    </table>
+    <br />
+    <button>Submit</button>
+
+    <!-- by using form tag -->
+
+    <h1>Welcome to Webpage</h1>
+
+    <form action="https://www.google.com">
+      <label for="username">Username:</label>
+
+      <input type="text" name="" id="" />
+<br>
+      <label for="password">Password:</label>
+
+      <input type="password" name="" id="" />
+
+      <br>
+
+      <!-- <button>submit</button> -->
+
+      <input type="submit" value="Submit"> 
+      <!-- type = submit create button  -->
+
+    </form>
+  </body>
+</html>
