@@ -1,0 +1,97 @@
+.container{
+    height: 400px;
+    border: 2px solid green;
+    /* adding flex */
+    display: flex ; 
+    /* bydefault it is in horizontal direction  */
+    /* to change this we add below  */
+    flex-direction: column;
+    flex-direction: row-reverse;
+    /* this convert reverse row that is [        4,3,2,1] */
+    /* same for column reverse */
+   flex-direction: row;
+
+     
+   /* flex-wrap  */
+   /* it use for width priserve */
+    flex-wrap: wrap;   /* when squze then box goes down  */
+
+    flex-wrap: wrap-reverse; /* when squze then box goes up  */
+
+    flex-flow: row wrap;/* by using flex-flow we can add direction ans wrap combine */
+
+
+
+    /* justify-content */
+    /* changes done according main (horizontal axis ) */
+    justify-content: flex-start;
+    justify-content: flex-end;
+    justify-content: center;
+    justify-content: space-around;
+    justify-content: space-between;
+    justify-content: space-evenly;
+
+    /* align-items */
+    /* changes done according to y vertical  axis */
+    align-items: flex-start;
+    align-items: flex-end;
+    align-items: center;
+    align-items: baseline; /* it align the center acording the text size like h1, h2, h3 in this all itemm has same base line  */  
+   
+
+    /* gap: 50px; */
+    /* we can gap the element  */
+
+
+    /* align-content */
+    /* it handale the spacing between row  */
+
+    align-content: flex-start;
+    align-content: flex-end;
+    align-content: center;
+    align-content: space-around;
+    align-content: space-between;
+    
+
+
+
+
+}
+
+.box{
+    border: 1px solid brown;
+    background-color: aqua;
+    width: 50px;
+}
+
+
+/* for clild flex property */
+/* 1 border */
+
+
+.container-child{
+    height: 400px;
+    border: 2px solid green;
+    /* adding flex */
+    display: flex ;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+#b1{
+    order: 1;
+}
+
+#b2{
+    order: 3;
+}
+#b3
+{
+    order: 2;
+    /* same order hogo to iteam ke pahile hi ata hai  */
+
+
+}

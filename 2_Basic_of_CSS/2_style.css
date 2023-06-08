@@ -1,0 +1,193 @@
+/* Gradient */
+
+.box{
+    border: 1px solid black;
+    height: 200px;
+    width: 150px;
+    background-image: linear-gradient(blue, red);  
+
+    /* this is by default top to bottom  */
+
+    background-image: linear-gradient(to left, blue, red); 
+    background-image: linear-gradient(to right, blue, red);
+    background-image: linear-gradient( to top, blue, red); 
+    background-image: linear-gradient(to left bottom, rgb(130, 130, 225), rgb(219, 157, 157));  
+    background-image: linear-gradient(to right bottom, rgb(130, 130, 225), rgb(219, 157, 157) ,green,yellow,red,pink,black);  
+    background-image: linear-gradient(45deg, rgb(130, 130, 225), rgb(219, 157, 157) ,green,yellow,red,pink,black);  
+
+
+}
+
+.box2{
+    margin: 10px;
+    border: 1px solid black;
+    height: 400px;
+    width: 400px;
+    background-image: radial-gradient(circle,red,blue,green);
+    background-image: radial-gradient(circle,red ,blue 10%,green );
+
+
+
+
+}
+
+
+/* shadow */
+
+ /* text ::shadow */
+h1{
+    
+    /* santax  */
+    /* text-shadow: horizontal vertical blar color; */
+
+    text-shadow: 3px 3px 3px red;
+
+
+    text-shadow: 3px 3px 3px red, 6px 6px 6px blue;
+
+}
+
+
+/* box ::shadow */
+
+.boxsh{
+    background-color: aqua;
+    width: 200px;
+    height: 200px;
+
+    box-shadow:10px 10px 10px red ;
+    /* default box box-shadow: is same as text color; */
+
+    box-shadow:-10px -10px 10px red, 10px 10px 10px rgb(183, 0, 255) ;
+/* - denote the up shadow */
+
+
+}
+
+
+/* overflow */
+#over{
+
+    margin-top:50Px;
+    background-color: aqua;
+    width: 100px;
+    height: 100px;
+    overflow: visible; 
+    /* same as privious */
+
+    overflow: hidden;   
+    /* hide overflow text */
+
+    overflow: scroll;
+
+    /* provid scroll option */
+
+    overflow: auto                                                                                                                                     ;
+
+}
+
+/* positioning */
+
+.divi
+{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+    border: 2px solid black;
+}
+
+/* relative */
+#d3{
+    position: relative;
+    right: 10px;
+    top: 10px;
+}
+
+/* fix position */
+
+#d1{
+    /* position: fixed; */
+    position: relative;
+}
+
+/* absolute position */
+
+#d4{
+    position: absolute;
+    top: 40px;
+    left: 50px;
+}
+
+#d2{
+    position: sticky;
+    top: 2px;
+}
+
+
+
+/* transform  */
+/* 2d transform */
+
+.div1
+{
+    width: 100px;
+    height: 50px;
+   background-color: brown;
+   display: inline-block;
+   border: 2px solid black;
+}
+
+#Translate{
+    transform: translate(400px, 400px);
+
+}
+
+#Rotate{
+    transform: rotate(45deg);
+}
+#scale{
+
+    margin: 200px;
+    transform:scale(3,3); 
+    /* scale the element scale */
+}
+#skew{
+    transform: skew(50deg);
+}
+
+
+#matrix{
+    /* stntax
+     transform: matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())*/
+  
+
+     transform: matrix(0.4, 0, 0.5, 1.2, 60, 10);
+}
+
+/* 3D transform  */
+
+
+#Translate-3d{
+    transform: perspective(15px) translateZ(-15px);
+
+}
+
+
+#scale-3d{
+
+    margin: 200px;
+    transform:scale(3,3); 
+    transform: perspective(350px) scaleZ(6) rotateZ(45deg) rotateX(50deg) rotateY(45deg);
+    /* scale the element scale */
+}
+
+
+
+
+
+
+
+
+
+

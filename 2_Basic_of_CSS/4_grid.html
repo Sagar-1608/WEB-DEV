@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+    <style>
+        .container{
+            background-color: brown;
+            height: 500px;
+            border: 3px solid black;
+            display: grid;
+            grid-template-columns: 200px  200px 200px; 
+            /* three column are add  */
+
+            grid-template-rows: 200px 200px;
+            /* 2 row genarated */
+
+            /* for responsive we can use fr */
+            grid-template-columns: 1fr 1fr 1fr  ;
+            grid-template-columns: repeat(3, 1fr );
+            /* same as above  */
+            grid-template-rows: repeat(4, 1fr);
+
+            gap: 10px;
+
+        }
+        .box{
+            background-color: aqua;
+            border: 3px solid black;
+            /* width: 80px; */
+            /* height: 80px; */
+        }
+        #box1{
+            grid-column-start: 1;
+            grid-column-end: 3;
+            /* box 1 accupies 2 column area */
+
+
+        }
+        #box3{
+            grid-row-start: 2;
+            grid-row-end: 4;
+            /* box 1 accupies 2 column area */
+
+
+        }
+
+
+        .container11{
+            background-color: rgb(174, 63, 26);
+            height: 500px;
+            border: 1px solid black;
+            display: grid;
+            
+            
+            grid-template-columns: 20% 1fr 1fr 20%;
+        
+            grid-template-rows: 25px 1fr 25px;
+
+            gap: 5px;
+
+        }
+        .box1{
+            background-color: rgb(19, 177, 87);
+            border: 1px solid black;
+            text-align: center;
+            
+        }
+        #box11 ,#box55{
+            /* grid-column-start: 1;
+            grid-column-end: 5; */
+            grid-column: 1/5;
+            
+
+        }
+        #box33{
+            /* grid-column-start: 2;
+            grid-column-end: 4; */
+            grid-column: 2/4;
+           
+            
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1">bax1</div>
+        <div class="box">bax2</div>
+        <div class="box" id="box3">bax3</div>
+        <div class="box">bax4</div>
+        <div class="box">bax5</div>
+        <div class="box">bax6</div>
+        <div class="box">bax7</div>
+        <div class="box">bax8</div>
+        <div class="box">bax9</div>
+        <div class="box">bax10</div>
+    </div>
+
+    <!-- simple page layout  -->
+    <br><br><br>
+
+    <div class="container11">
+        <div class="box1" id="box11">header</div>
+        <div class="box1">menu</div>
+        <div class="box1" id="box33">content</div>
+        <div class="box1" id="box44">advertise</div>
+        <div class="box1" id="box55">footer</div>
+
+    </div>
+
+    
+</body>
+</html>
