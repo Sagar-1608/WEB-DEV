@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            --clr : rgba(5, 119, 5, 0.333);
+            
+        }
+        :root{
+            /* for global variable declaration use root  */
+             --clr : rgba(5, 119, 5, 0.333);
+        }
+        
+        .container{
+            border: 1px solid black;
+            /* background-color:red; */
+            height: 300px;
+            width: 300px;
+            background-color: var(--clr);
+        }
+        .box{
+            border: 2px solid green;
+            background-color: aqua;
+            /* color: #981a2c; */
+            --dark-red: #1f191a;
+            color: var(--dark-red);
+
+        }
+
+        /* transition  */
+
+
+        .container1{
+            border: 3px solid rgb(156, 14, 14);
+            /* background-color:red; */
+            height: 500px;
+            width: 500px;
+            background-color: green;
+            display: flex;
+        }
+        .box1{
+            border: 2px solid orange;
+            background-color: aqua;
+            height: 150px;
+            width: 150px;
+            margin: 20px;
+
+
+            transition-property: all;
+            transition-duration: 3s;
+            transition-timing-function: ease;
+            transition-delay: 1s;
+            /* you acn use above all property in on short hand natation  below  */
+            transition: all 1s ease 0.2s ;
+            /* transition: property duration function delay; */
+
+
+            transition: all 1s cubic-bezier(0.78,-0.23, 0.41, 1.32) 0.25;
+            /* you can use your own fun see above  */
+            
+
+        }
+        .box1:hover{
+            background-color: brown;
+            transform: rotate(45deg);
+            transform: translateX(500px) rotate(360deg) scale(1.2);
+        }
+
+        .container2{
+            border: 2px solid rgb(156, 14, 14);
+            /* background-color:red; */
+            height: 216px;
+            width: 100%;
+            background-color: rgb(203, 231, 21);
+            display: flex;
+        }
+        .box2{
+            border: 2px solid rgb(23, 212, 55);
+            background-color: aqua;
+            height: 212px;
+            width: 213px;
+            animation-name: sagar;
+            animation-duration: 2s;
+            animation-timing-function:linear ;
+            animation-delay: 0.5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            /* animation-fill-mode: both; */
+            /* you can use below code in on line */
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+          
+
+        }
+        /* @keyframes sagar{
+            from{
+                width: 212px;
+            }
+            to{
+                width: 800px;
+            }
+        } */
+
+        @keyframes sagar{
+            0%{
+                width: 212px;
+                background-color: orange;
+            }
+            50%{
+                width: 50%;
+                background-color: white;
+            }
+            100%{
+                width: 100%;
+                background-color:green;
+            }
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+
+    <!-- variable  -->
+    <!-- <div class="container">
+        <div class="box">b1</div>
+        <div class="box">b2</div>
+        <div class="box">b3</div>
+        <div class="box">b4</div>
+    </div> -->
+
+
+    <!-- animaton -->
+    <!-- traansition in css  -->
+    <!-- <div class="container1">
+        <div class="box1">
+            mai ek box hu
+        </div>
+
+    </div> -->
+
+    <!-- animation and keyframes: -->
+    <div class="container2">
+        <div class="box2">
+            mai ek box hu
+        </div>
+
+    </div>
+
+    
+</body>
+</html>
