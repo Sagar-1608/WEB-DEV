@@ -1,0 +1,12 @@
+.date{
+    
+    text-align: center;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    height: 100px;
+    width: 100px;
+
+}
