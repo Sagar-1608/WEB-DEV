@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #000;
+            font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        }
+
+        .circle1 {
+            background: linear-gradient(-25deg, #d84869, #f46641);
+            animation: circle1Animate 15s infinite;
+            border-radius: 50%;
+        }
+
+        /* adding the animation on circle 1 */
+        @keyframes circle1Animate {
+            50% {
+                left: 24%;
+                top: 4%;
+                scale: 1.11;
+            }
+        }
+
+        .circle2 {
+            background: linear-gradient(-25deg, #5648d8, #8641f4);
+            animation: circle2Animate 15s infinite;
+        }
+
+        @keyframes circle2Animate {
+            50% {
+                right: 26%;
+                bottom: 4%;
+                scale: 1.11;
+            }
+        }
+
+        .modal{
+            scale: 0;
+    
+        }
+
+        .overlay{
+            opacity: 0;
+        }
+
+        /* when click on shere profile  */
+
+
+        .modalactive{
+            scale:1 ; 
+            z-index: 10;   
+            /* active the modal */
+        }
+        .overlayactive{
+            opacity: 1;
+            z-index: 0;
+            /* overlay is active  */
+
+        }
+    </style>
+</head>
+
+<body>
+ <div>
+
+
+        <!-- wrapper  -->
+
+        <!-- first circle -->
+        <div
+            class="circle1 fixed top-[5%] left-[20%] w-[10em] h-[10em] shadow-[0_0px_50px_rgba(216,72,105)] rounded-full">
+        </div>
+
+
+        <!-- second circle  -->
+        <div
+            class=" circle2 fixed bottom-[1%] right-[22%] w-[10em] h-[10em] shadow-[0_0px_50px_#5648d8] rounded-full">
+        </div>
+
+
+        <div class=" wrapper w-[100vw] h-[100vh]">
+
+            <!-- main box -->
+            <div class="card-wrapper absolute top-[18%] left-[35%] flex flex-col items-center justify-evenly bg-[#ffffff30] backdrop-blur-[15px] 
+                        rounded-[15px] py-[20px] px-[20px] h-[400px]  border-[2px] border-solid border-[#ffffff1a] ">
+
+                <!-- profile vala -->
+                <div>
+                    <img class=" w-[150px] h-[150px] border-[2px] border-solid border-[#ffffff30] rounded-[50%] "
+                        src="pass-photo.jpeg" alt="user">
+                </div>
+
+                <!-- name -->
+                <div>
+                    <h2 class="text-[2rem] text-center text-white font-bold">Sagar Jadhav</h2>
+                </div>
+
+                <!-- about -->
+                <div>
+                    <h3 class="text-[#ffffff85] text-center">Expert, Chegg India</h3>
+                </div>
+
+                <!-- buttons group  -->
+                <div class="group-btn flex justify-between gap-[10px]">
+                    <!-- share  -->
+
+                    <button onclick="openModal()"
+                        class="flex justify-center items-center gap-[7px] py-[9px] px-[12px] 
+                    text-[#ffffffb9] capitalize rounded-[4px] cursor-pointer border-[#ffffffb9] border-[2px] border-solid hover:bg-[#505050b9]">
+                        <i class="fa-solid fa-share"></i>
+                        <div>share my profile</div>
+                    </button>
+
+                    <!-- follow -->
+
+                    <button
+                        class=" flex justify-center items-center w-[150px] py-[9px] px-[12px] text-[#ffffffb9]  
+              capitalize rounded-[4px] cursor-pointer border-[#ffffffb9] border-[2px] border-solid transition-all hover:bg-[#505050b9]">
+                    Follow Me </button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <!-- modal -->
+        <div class=" modal fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 border-[2px] border-[#ffffff59] border-solid
+        w-[450px] bg-black  backdrop-blur-[10px] text-white z-1 py-[20px] px-[25px] rounded-[20px] transition-all">
+             
+        <!-- modal header  -->
+        <div class="flex flex-row mb-[25px] justify-between items-center pb-[12px] border-b-[1px] border-b-[#ffffff88] border-solid" >
+                <h2 class="text-[30px] font-bold ">Share My Profile</h2>
+                <i  onclick="closeModal()" class=" cursor-pointer text-[30px] fa-solid fa-xmark close"></i>
+            </div>
+
+
+        <!-- icons container -->
+        <div class=" ">
+                <h3>Share this via</h3>
+
+           <!-- icons  -->
+           <div class="mt-[20px] flex  justify-between  flex-wrap ">
+
+            <a href="https://www.facebook.com" class="icon flex items-center justify-center
+            border-[1px] border-solid border-[#1771e6] text-[#1771e6]
+            p-[17px] rounded-[50%] w-[30px] h-[30px] my-[10px] mx-0 gap-[10px] 
+            transition-all mb-[25px] decoration-0 hover:bg-[#1771e6] hover:text-[#fff]" >
+                <i class="text-[20px] fa-brands fa-facebook-f"></i>
+              </a>
+
+
+              <a href="https://twitter.com" class="icon  flex items-center justify-center
+              border-[1px] border-solid border-[#1c99e6] text-[#1c99e6] 
+              p-[17px] rounded-[50%] w-[30px] h-[30px] my-[10px] mx-0 gap-[10px] 
+              transition-all mb-[25px] decoration-0 hover:bg-[#1c99e6] hover:text-[#fff]"  id="twitter">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+
+
+              <a href="https://www.instagram.com" class="icon flex items-center justify-center
+              border-[1px] border-solid border-[#cb2770] text-[#cb2770]
+              p-[17px] rounded-[50%] w-[30px] h-[30px] my-[10px] mx-0 gap-[10px]
+               transition-all mb-[25px] decoration-0 hover:bg-[#cb2770] hover:text-[#fff]"  id="instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+
+
+              <a href="https://www.whatsapp.com" class="icon flex items-center justify-center
+              border-[1px] border-solid border-[#2fe664]  text-[#2fe664]
+              p-[17px] rounded-[50%] w-[30px] h-[30px] my-[10px] mx-0 gap-[10px]
+              transition-all mb-[25px] decoration-0 hover:bg-[#2fe664] hover:text-[#fff]" 
+                id="whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+
+
+              <a href="https://web.telegram.org" class="icon flex items-center justify-center
+              border-[1px] border-solid border-[#0081c2]  text-[#0081c2]
+              p-[17px] rounded-[50%] w-[30px] h-[30px] my-[10px] mx-0 gap-[10px] 
+              transition-all mb-[25px] decoration-0 hover:bg-[#0081c2] hover:text-[#fff]"  id="telegram">
+                <i class="fa-brands fa-telegram"></i>
+              </a>         
+           </div>
+            
+            </div>
+        </div>
+
+
+  <!-- Overlay -->
+  <div class="overlay fixed bg-[#5f5f5f83] top-0 bottom-0 left-0 right-0  z-0 pointer-events-none transition-all " onclick="closeModal()"></div>
+
+
+        <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+
+        <script src="index.js"></script>
+
+    </div> 
+
+
+</body>
+
+</html>
