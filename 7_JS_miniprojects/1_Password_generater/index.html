@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;600&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+            font-family: 'League Spartan', sans-serif;
+
+        }
+
+        .wrapper {
+            background: linear-gradient(90deg, rgba(56, 9, 75, 1) 0%, rgba(238, 130, 238, 1) 100%);
+        }
+
+        :root {
+
+            --dk-violet: hsl(268, 75%, 9%);
+            --lt-violet: hsl(268, 47%, 21%);
+            --lt-violet2: hsl(281, 89%, 26%);
+            --vb-violet: hsl(285, 91%, 52%);
+            --vb-violet2: hsl(290, 70%, 36%);
+
+            --vb-yellow: hsl(52, 100%, 62%);
+
+
+            --pl-white: hsl(0, 0%, 100%);
+
+            --vb-cyan: hsl(176, 100%, 44%);
+            --vb-cyan2: hsl(177, 92%, 70%);
+            --dk-text: hsl(198, 20%, 13%);
+        }
+
+
+        .display::placeholder {
+            position: absolute;
+            top: 50%;
+            left: 0.1rem;
+            font-size: 1rem;
+            line-height: 30px;
+            color: yellow;
+            opacity: 0.65;
+            border: 0px solid;
+            text-transform: uppercase;
+            transform: translateY(-50%);
+        }
+
+        *:focus {
+            outline: none;
+        }
+
+
+        .slider {
+            background-image: linear-gradient(var(--vb-violet), var(--vb-violet));
+            background-repeat: no-repeat;
+
+            background-color: var(--lt-violet);
+            background-image: linear-gradient(var(--vb-violet), var(--vb-violet));
+            background-repeat: no-repeat;
+          
+
+
+        }
+
+        .slider::-webkit-slider-thumb {
+            position: relative;
+            z-index: 1;
+            appearance: none;
+            height: 1.3rem;
+            width: 1.3rem;
+            border-radius: 50%;
+            background-color: var(--vb-yellow);
+            cursor: pointer;
+            margin-top: -3px;
+            box-shadow: 0px 0px 20px 0px rgba(255, 229, 61, 0.50);
+            transition: all 100ms ease-in;
+        }
+
+        .slider:focus {
+            outline: 3px solid var(--vb-yellow);
+        }
+
+        .slider::-webkit-slider-thumb:hover {
+            outline: 2px solid var(--vb-yellow);
+            background-color: var(--dk-violet);
+            box-shadow: 0px 0px 25px 5px rgba(255, 229, 61, 0.80);
+        }
+
+
+        .msg.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .dataIndicator.indiActive {
+            box-shadow: aqua;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- wrapper  -->
+
+    <div class=" wrapper w-[100vw] h-[100vh] flex justify-center items-center ">
+
+        <div class="absolute flex flex-col items-center gap-3 w-[300px]  m-10">
+
+            <!-- heading  -->
+            <div
+                class="text-[hsl(0,0%,100%)] font-bold text-[20px] opacity-[0.75]  tracking-[2px] text-center leading-[1.2]   ">
+
+                <h1 class="mb-3">PASSWORD GENERATOR</h1>
+
+            </div>
+
+            <!-- display -->
+            <div
+                class="  relative flex justify-between bg-[#160628]  items-center w-[100%] h-[40px]  px-2 rounded-[0.7rem] border-b-[0.35rem] border-solid border-[#58077D]">
+
+                <input data-passwordDisplay type="text" placeholder="password"
+                    class="display text-[#FFE433] bg-transparent">
+
+                <button data-copyBtn class="text-[#4be6e6] px-2 relative">
+                    <!-- here copy msg is custom attributes  -->
+                    <!-- when hover on copy btn the show copied  -->
+
+
+                    <span copy_msg
+                        class=" msg absolute bg-[#BC15F4] text-[#FFE433]  text-[1rem] top-[-35px] left-[-12px] py-[5px] px-[5px]  rounded-[0.5rem] opacity-0 scale-0 origin-bottom transition-all    ">
+                    </span>
+                    <i class="fa-regular fa-copy"></i>
+                </button>
+
+
+            </div>
+
+            <!-- main div  -->
+            <div
+                class="  flex flex-col  w-[100%]  gap-5 p-[2rem]  bg-[#160628] rounded-[1rem] border-b-[0.35rem] border-solid border-[#58077D]">
+
+                <!-- password lengh -->
+                <div class="flex flex-row justify-between items-center w-full text-white ">
+                    <h3 class="text-[1.2rem] text-[#ffffff]">Password Length</h3>
+                    <p data-lengthNumber class="text-[#FFE433] text-[1.2rem]">0</p>
+
+                </div>
+
+                <!-- bar -->
+                <div class="">
+
+                    <input type="range" min="1" max="20" class="slider appearance-none w-[100%] h-[0.6rem] cursor-pointer rounded-[1rem] border-none  outline-none -z-1
+                    " step="1" data-lengthSlider>
+                    <!-- appearance-none w-[100%] h-[0.7rem] cursor-pointer bg-[#BC15F4] rounded-[1rem] border-none  outline-none -z-1 -->
+
+                </div>
+
+                <!-- check point  -->
+                <div class=" flex flex-col text-white gap-[0.3rem]">
+                    <div>
+                        <input
+                            class=" relative appearance-none w-[12px] h-[12px] border-[1px] border-solid border-[#00E0D1] cursor-pointer rounded-[0.20rem]
+                    checked:bg-[#00E0D1] checked:before:content-['✔'] 
+                    checked:before:absolute  checked:before:text-[#1B2428]    checked:before:text-[0.8rem] 
+                    checked:before:left-[50%] checked:before:top-[-0.555rem] checked:before:translate-x-[-50%] checked:before:translate-y-[40%]"
+                            type="checkbox" id="upper" name="upper" value="Bike">
+                        <label for="upper"> Include Uppercase Letters </label>
+
+                    </div>
+
+                    <div>
+                        <input
+                            class=" relative appearance-none w-[12px] h-[12px] border-[1px] border-solid border-[#00E0D1] cursor-pointer rounded-[0.20rem]
+                        checked:bg-[#00E0D1] checked:before:content-['✔'] 
+                        checked:before:absolute  checked:before:text-[#1B2428]    checked:before:text-[0.8rem] 
+                        checked:before:left-[50%] checked:before:top-[-0.555rem] checked:before:translate-x-[-50%] checked:before:translate-y-[40%]"
+                            type="checkbox" id="lower" name="lower" value="Car">
+                        <label for="lower"> Include Lowercase Letters </label>
+
+                    </div>
+                    <div>
+                        <input
+                            class=" relative appearance-none w-[12px] h-[12px] border-[1px] border-solid border-[#00E0D1] cursor-pointer rounded-[0.20rem]
+                        checked:bg-[#00E0D1] checked:before:content-['✔'] 
+                        checked:before:absolute  checked:before:text-[#1B2428]    checked:before:text-[0.8rem] 
+                        checked:before:left-[50%] checked:before:top-[-0.555rem] checked:before:translate-x-[-50%] checked:before:translate-y-[40%]"
+                            type="checkbox" id="number" name="number" value="Boat">
+                        <label for="number"> Include Numbers</label>
+
+                    </div>
+                    <div>
+                        <input
+                            class=" relative appearance-none w-[12px] h-[12px] border-[1px] border-solid border-[#00E0D1] cursor-pointer rounded-[0.20rem]
+                         checked:bg-[#00E0D1] checked:before:content-['✔'] 
+                         checked:before:absolute  checked:before:text-[#1B2428]    checked:before:text-[0.8rem] 
+                         checked:before:left-[50%] checked:before:top-[-0.555rem] checked:before:translate-x-[-50%] checked:before:translate-y-[40%]"
+                            type="checkbox" id="symbol" name="symbol" value="Bike">
+                        <label for="symbol"> Include Symbol</label>
+
+                    </div>
+
+
+
+                </div>
+
+                <!-- strength  -->
+                <div class="flex  justify-between items-center text-white ">
+                    <p class="text-[#ffffff] text-[1.2rem]">Strength</p>
+                    <div dataIndicater class="dataIndicartor  w-[1.2rem] h-[1.2rem] border-solid  rounded-[50%]  ">
+
+                    </div>
+
+                </div>
+
+                <!-- button  -->
+
+                <button
+                    class="generateBtn w-[100%] bg-[#BC15F4] border-b-[0.20rem] border-b-solid border-b-[#FFE433] rounded-[0.75rem] p-1 font-bold hover:-translate-y-[2px] ">GENERATE
+                    PASSWORD</button>
+
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
