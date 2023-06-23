@@ -1,12 +1,17 @@
 .card{
-    padding: 0;
-    overflow-x: hidden;
-
-    height: 100vh;
-    width: 1280px;
-    display:flex;
-    flex-direction: row;
-    gap: 10px;
-    
    
+  width: 300px;
+  height: 100%;
+  margin-top: 30px;
+  margin-bottom: 100px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+  background-color: #560d56;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5%;
+  
 }

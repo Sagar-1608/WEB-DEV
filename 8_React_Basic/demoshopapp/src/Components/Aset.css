@@ -1,0 +1,14 @@
+
+.c1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 6px;
+    margin: 5px;
+    background-color: #be7318;
+    border-radius: 15px;
+    border: 2px solid rgb(56, 53, 53);
+    box-shadow: #282c34;
+   }
+   

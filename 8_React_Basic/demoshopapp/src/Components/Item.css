@@ -1,9 +1,13 @@
 .nirma{
     text-align: center;
-    background-color: aqua;
+    /* background-color: aqua; */
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 300px;
-    height: 300px;
+    width: 100px;
+    height: 40px;
+    text-shadow: rgb(15, 14, 14);
+    
+    color: rgb(126, 5, 5);
+    
 }

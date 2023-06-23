@@ -1,0 +1,9 @@
+.newproduct{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #074554;
+    height: 100px;
+    width: 400px;
+    border-radius: 10px;
+}
