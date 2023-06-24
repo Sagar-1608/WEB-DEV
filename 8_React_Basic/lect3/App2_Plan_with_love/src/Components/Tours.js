@@ -16,7 +16,7 @@ function Tours({tours, removeTour}) //resiving data array from app.js
             <div className="cards">
             {
                 tours.map((tour)=>{
-                    return <Card {...tour} removeTour={removeTour}></Card> // ..tour means cloning object
+                    return <Card {...tour} removeTour={removeTour}></Card> // ..tour means cloning object  //then both all abject and removetour function send to card
                 })
             }
 
