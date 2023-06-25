@@ -1,18 +1,34 @@
 import { Children } from 'react';
 import './Item.css'
+import React, {useState} from "react"
 
-function Item(props) { 
+function Item({id, day, month, year, name, removeProduct }) {
 
 
-    const itemName=props.name;
-    
-    return(
-        <div>
-         <p className='nirma'>{itemName}</p>
-        
-        </div> 
-        
-       
+
+    return (
+        <div className='p'>
+            <div className='car'>
+
+
+                <div className='c1'>
+                    <div className='date'>
+                        <div>{day}</div>
+                        <div>{month} </div>
+                        <div>{year}</div>
+                    </div>
+
+                    <p className='name'>{name}</p>
+                    <button onClick={()=>removeProduct(id)}>Remove</button>
+                    
+                </div>
+
+            </div>
+
+
+        </div>
+
+
     );
 
 }

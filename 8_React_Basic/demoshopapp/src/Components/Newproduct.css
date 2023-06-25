@@ -1,9 +1,18 @@
 .newproduct{
+   
     display: flex;
     align-items: center;
     justify-content: center;
     background: #074554;
-    height: 100px;
+    height: 140px;
     width: 400px;
     border-radius: 10px;
+    gap: 10px;
+}
+
+.form{
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    
 }
