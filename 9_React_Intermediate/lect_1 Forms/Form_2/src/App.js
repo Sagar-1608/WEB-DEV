@@ -20,7 +20,7 @@ function App() {
 
   return (
    <div className="   flex items-center justify-center ">
-   <div className=" w-[800px] m-10 border-2 border-[#c6c8cacb] relative ">
+   <div className=" w-[800px] m-10 border-2 border-[#c6c8cacb] relative rounded-md ">
    {
     form ? ( 
       <div>
