@@ -14,6 +14,9 @@ export default function SignupForm({ setIsLoggedIn }) {
   });
 
   const [showPassword, setShowPassword] = useState(false);
+  const [cnfPassword, setcnfPassword] = useState(false);
+
+  const [accountType,setAccountType] = useState("student")
   const navigate = useNavigate();
 
   function changeHandler(event) {
@@ -45,12 +48,16 @@ export default function SignupForm({ setIsLoggedIn }) {
     <div>
       {/* student and instructur  */}
 
-      <div>
-        <button>Student</button>
-        <button>Instructur</button>
+      <div className=" flex bg-richblack-800 p-1 gap-x-1 my-6 rounded-full max-w-max border border-b-richblack-100
+           border-t-0 border-r-0 border-l-0">
+        <button onClick={()=>setAccountType("student")}
+        className={`${accountType==="student"?"bg-richblack-900 text-richblack-5":" bg-transparent text-richblack-200"} py-2 px-5 rounded-full transition-all duration-200`} >Student</button>
+
+        <button onClick={()=>setAccountType("instructor")} 
+        className={`${accountType==="instructor"?"bg-richblack-900 text-richblack-5":" bg-transparent text-richblack-200"} py-2 px-5 rounded-full transition-all duration-200`} >Instructor</button>
       </div>
 
-      <form
+      <form className="flex flex-col gap-4"
         onSubmit={(event) => {
           // here submitHandler not working so thats why we use arrow function
           event.preventDefault();
@@ -61,16 +68,17 @@ export default function SignupForm({ setIsLoggedIn }) {
           setIsLoggedIn(true);
           toast.success("Acount Created");
           const accountData = {
-            ...formData,
+            ...formData,accountType
           };
           console.log(accountData);
           navigate("/dashboard");
         }}
       >
-        <div>
+      {/* first last name */}
+        <div className="flex  justify-between">
           <label>
-            <p>
-              First Name<sup>*</sup>
+            <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem] ">
+              First Name<sup className=" text-pink-200">*</sup>
             </p>
             <input
               required
@@ -79,11 +87,12 @@ export default function SignupForm({ setIsLoggedIn }) {
               name="first"
               onChange={changeHandler}
               placeholder="Enter First Name"
-            />
+            className=" bg-richblack-800  rounded-[0.5rem] text-richblack-5 w-full p-[12px] border border-b-richblack-100
+           border-t-0 border-r-0 border-l-0 focus:outline-none"/>
           </label>
           <label>
-            <p>
-              Last Name<sup>*</sup>
+            <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem] ">
+              Last Name<sup className=" text-pink-200">*</sup>
             </p>
             <input
               required
@@ -92,13 +101,16 @@ export default function SignupForm({ setIsLoggedIn }) {
               name="last"
               onChange={changeHandler}
               placeholder="Enter Last Name"
-            />
+            className=" bg-richblack-800  rounded-[0.5rem] text-richblack-5 w-full p-[12px] border border-b-richblack-100
+           border-t-0 border-r-0 border-l-0 focus:outline-none"/>
           </label>
         </div>
 
+        {/* email  */}
+
         <label>
-          <p>
-            Email Address<sup>*</sup>
+          <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]" >
+            Email Address<sup className=" text-pink-200">*</sup>
           </p>
           <input
             required
@@ -107,13 +119,16 @@ export default function SignupForm({ setIsLoggedIn }) {
             name="email"
             onChange={changeHandler}
             placeholder="Enter Email id"
-          />
+          className=" bg-richblack-800  rounded-[0.5rem] text-richblack-5 w-full p-[12px] border border-b-richblack-100
+           border-t-0 border-r-0 border-l-0 focus:outline-none"/>
         </label>
 
-        <div>
-          <label>
-            <p>
-              Create Password <sup>*</sup>
+        {/* create password and confirm password  */}
+
+        <div className="flex  justify-between">
+          <label className="  relative">
+            <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem] ">
+              Create Password <sup className=" text-pink-200">*</sup>
             </p>
             <input
               required
@@ -122,31 +137,33 @@ export default function SignupForm({ setIsLoggedIn }) {
               name="password"
               onChange={changeHandler}
               placeholder="Enter Password"
-            />
-            <span onClick={() => setShowPassword((prev) => !prev)}>
-              {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+            className=" bg-richblack-800  rounded-[0.5rem] text-richblack-5 w-full p-[12px] border border-b-richblack-100
+           border-t-0 border-r-0 border-l-0 focus:outline-none"/>
+            <span className=" absolute right-3 top-[38px]  cursor-pointer " onClick={() => setShowPassword((prev) => !prev)}>
+              {showPassword ? <AiOutlineEyeInvisible fontSize={24} fill="#AFb2BF"  /> : <AiOutlineEye fontSize={24} fill="#AFb2BF"/>}
             </span>
           </label>
 
-          <label>
-            <p>
-              Confirm Password<sup>*</sup>
+          <label className=" relative">
+            <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem] ">
+              Confirm Password<sup className=" text-pink-200">*</sup>
             </p>
             <input
               required
-              type={showPassword ? "text" : "password"}
+              type={cnfPassword ? "text" : "password"}
               value={formData.cnfpassword}
               name="cnfpassword"
               onChange={changeHandler}
               placeholder="Confirm Password"
-            />
-            <span onClick={() => setShowPassword((prev) => !prev)}>
-              {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+            className=" bg-richblack-800  rounded-[0.5rem] text-richblack-5 w-full p-[12px] border border-b-richblack-100
+           border-t-0 border-r-0 border-l-0 focus:outline-none"/>
+            <span className=" absolute right-3 top-[38px]  cursor-pointer " onClick={() => setcnfPassword((prev) => !prev)}>
+              {cnfPassword ? <AiOutlineEyeInvisible fontSize={24} fill="#AFb2BF" /> : <AiOutlineEye fontSize={24} fill="#AFb2BF"/>}
             </span>
           </label>
         </div>
 
-        <button>Sign Up</button>
+        <button className=" w-full bg-yellow-50 rounded-[8px] font-medium text-richblack-900 px-[12px] py-[8px] mt-6">Create Account</button>
       </form>
     </div>
   );
