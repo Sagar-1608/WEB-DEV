@@ -8,6 +8,7 @@ console.log("this this is js first tute 5")
 // eg 
 
 
+
 {
     var s =45;
     console.log(s);
