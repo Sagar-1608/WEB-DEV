@@ -1,4 +1,17 @@
 Table of content 
 
 1) Basic of javascript 
-2)
+  --varable 
+  --primitive data type 
+  --arithmatic operator
+  --assignment (=,+=,-=,.....)
+  --ternary Operator 
+  --logical (&&,||,!) with non-booleans value 
+  --bitwise, and, and or 
+  --condition expresion 
+  --input from user 
+  --condition expresion 
+  --switch case 
+  --loops 
+
+2) 
