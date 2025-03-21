@@ -1,17 +1,22 @@
 Table of content 
 
 1) Basic of javascript 
-  --varable 
-  --primitive data type 
-  --arithmatic operator
-  --assignment (=,+=,-=,.....)
-  --ternary Operator 
-  --logical (&&,||,!) with non-booleans value 
-  --bitwise, and, and or 
-  --condition expresion 
-  --input from user 
-  --condition expresion 
-  --switch case 
-  --loops 
+  --Varable 
+  --Primitive data type 
+  --Non-Primitive data type 
+  --Arithmatic operator
+  --Assignment (=,+=,-=,.....)
+  --Ternary Operator 
+  --Logical (&&,||,!) with non-booleans value 
+  --Bitwise, and, and or 
+  --Condition expresion 
+  --Input from user 
+  --Conversion Operation 
+  --Comparision 
+  --Strings Operations 
+  --Numbers and Math Libarary 
+  --Date in Js 
+  --Switch case 
+  --Loops 
 
 2) 
